@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>JS Bin</title>
+  <title>PWA test</title>
 </head>
-<link a="http://www.baidu.com"/>
-<script src="createObject.js"></script> 
+<script>
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+        navigator.serviceWorker.register('/sw.js', {scope: '/'})
+            .then(function (registration) {
+
+                // 注册成功
+                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            })
+            .catch(function (err) {
+
+                // 注册失败:(
+                console.log('ServiceWorker registration failed: ', err);
+            });
+    });
+}
+</script> 
 
 <body>
 
-<a href=mailto:yeliang@jd.com;chenliang@jd.com>http://www.baidu.com</a>
+<h1>test</h1>
 </body>
 </html>
