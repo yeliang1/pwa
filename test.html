@@ -4,23 +4,12 @@
   <meta charset="UTF-8">
   <title>Hello PWA</title>
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="manifest" href="/manifest.json">
 </head>
 <body>
   <h3>Hello PWA</h3>
 </body>
 <script>
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function () {
-        navigator.serviceWorker.register('sw.js', {scope: '/'})
-            .then(function (registration) {
-                // 注册成功
-                console.log('ServiceWorker registration successful with scope: ', registration.scope);
-            })
-            .catch(function (err) {
-                // 注册失败:(
-                console.log('ServiceWorker registration failed: ', err);
-            });
-    });
-}
+
 </script>
 </html>
