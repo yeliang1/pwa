@@ -1,10 +1,10 @@
-{
-    "name": "图书搜索",
-    "short_name": "书查",
+锘縶
+    "name": "鍥句功鎼滅储",
+    "short_name": "涔︽煡",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#333",
-    "description": "一个搜索图书的小WebAPP（基于豆瓣开放接口）",
+    "description": "涓�涓悳绱㈠浘涔︾殑灏廤ebAPP锛堝熀浜庤眴鐡ｅ紑鏀炬帴鍙ｏ級",
     "orientation": "portrait-primary",
     "theme_color": "#5eace0",
     "icons": [{
