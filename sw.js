@@ -1,4 +1,4 @@
-var cacheName = 'bs-0-2-0';
+var cacheName = 'bs-0-2-1';
 var cacheFiles = [
     'index.html',
     'index.js',
