@@ -1,7 +1,7 @@
-(function() {
+ï»¿(function() {
     /**
-     * Éú³ÉÊé¼®ÁĞ±í¿¨Æ¬£¨domÔªËØ£©
-     * @param {Object} book Êé¼®Ïà¹ØÊı¾İ
+     * ç”Ÿæˆä¹¦ç±åˆ—è¡¨å¡ç‰‡ï¼ˆdomå…ƒç´ ï¼‰
+     * @param {Object} book ä¹¦ç±ç›¸å…³æ•°æ®
      */
     function createCard(book) {
         var li = document.createElement('li');
@@ -31,8 +31,8 @@
     }
 
     /**
-     * ¸ù¾İ»ñÈ¡µÄÊı¾İÁĞ±í£¬Éú³ÉÊé¼®Õ¹Ê¾ÁĞ±í
-     * @param {Array} list Êé¼®ÁĞ±íÊı¾İ
+     * æ ¹æ®è·å–çš„æ•°æ®åˆ—è¡¨ï¼Œç”Ÿæˆä¹¦ç±å±•ç¤ºåˆ—è¡¨
+     * @param {Array} list ä¹¦ç±åˆ—è¡¨æ•°æ®
      */
     function fillList(list) {
         list.forEach(function (book) {
@@ -42,8 +42,8 @@
     }
 
     /**
-     * ¿ØÖÆtipÕ¹Ê¾ÓëÏÔÊ¾µÄÄÚÈİ
-     * @param {string | undefined} text tipµÄÌáÊ¾ÄÚÈİ
+     * æ§åˆ¶tipå±•ç¤ºä¸æ˜¾ç¤ºçš„å†…å®¹
+     * @param {string | undefined} text tipçš„æç¤ºå†…å®¹
      */
     function tip(text) {
         if (text === undefined) {
@@ -56,8 +56,8 @@
     }
 
     /**
-     * ¿ØÖÆloading¶¯»­µÄÕ¹Ê¾
-     * @param {boolean | undefined} isloading ÊÇ·ñÕ¹Ê¾loading
+     * æ§åˆ¶loadingåŠ¨ç”»çš„å±•ç¤º
+     * @param {boolean | undefined} isloading æ˜¯å¦å±•ç¤ºloading
      */
     function loading(isloading) {
         if (isloading) {
@@ -70,8 +70,8 @@
     }
     
     /**
-     * ¸ù¾İÓÃ»§ÊäÈë½á¹û
-     * Ê¹ÓÃXMLHttpRequest²éÑ¯²¢Õ¹Ê¾Êı¾İÁĞ±í
+     * æ ¹æ®ç”¨æˆ·è¾“å…¥ç»“æœ
+     * ä½¿ç”¨XMLHttpRequestæŸ¥è¯¢å¹¶å±•ç¤ºæ•°æ®åˆ—è¡¨
      */
     function queryBook() {
         var input = document.querySelector('#js-search-input');
@@ -79,7 +79,7 @@
         var xhr = new XMLHttpRequest();
         var url = '/book?q=' + query + '&fields=id,title,image,author,publisher,price';
         if (query === '') {
-            tip('ÇëÊäÈë¹Ø¼ü´Ê');
+            tip('è¯·è¾“å…¥å…³é”®è¯');
             return;
         }
         document.querySelector('#js-list').innerHTML = '';
@@ -98,7 +98,7 @@
                 }
                 tip();
                 if (response.books.length === 0) {
-                    tip('ÎŞ½á¹û');
+                    tip('æ— ç»“æœ');
                 }
                 else {
                     input.blur();
@@ -112,14 +112,14 @@
     }
 
     /**
-     * ¼àÌı¡°ËÑË÷¡±°´Å¥µã»÷ÊÂ¼ş
+     * ç›‘å¬â€œæœç´¢â€æŒ‰é’®ç‚¹å‡»äº‹ä»¶
      */
     document.querySelector('#js-search-btn').addEventListener('click', function () {
         queryBook();
     });
 
     /**
-     * ¼àÌı¡°»Ø³µ¡±ÊÂ¼ş
+     * ç›‘å¬â€œå›è½¦â€äº‹ä»¶
      */
     window.addEventListener('keypress', function (e) {
         if (e.keyCode === 13) {
