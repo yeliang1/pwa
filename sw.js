@@ -27,3 +27,17 @@ self.addEventListener('fetch', function (e) {
         })
     );
 });
+
+// 监听activate事件，激活后通过cache的key来判断是否更新cache中的静态资源
+self.addEventListener('activate', function (e) {
+    console.log('Service Worker 状态： activate');
+    var cachePromise = caches.keys().then(function (keys) {
+        return Promise.all(keys.map(function (key) {
+            if (key !== cacheName) {
+                return caches.delete(key);
+            }
+        }));
+    })
+    e.waitUntil(cachePromise);
+    return self.clients.claim();
+});
